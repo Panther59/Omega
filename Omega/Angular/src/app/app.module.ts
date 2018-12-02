@@ -33,6 +33,8 @@ import { RouterModule } from '@angular/router';
 import { StorageService } from './_services/storage.service';
 import { MessageService } from './_services/message.service';
 import { ThemeDialogComponent } from './theme-dialog/theme-dialog.component';
+import { EncodeComponent } from './encode/encode.component';
+import { DecodeComponent } from './decode/decode.component';
 const monacoConfig: NgxMonacoEditorConfig = {
   baseUrl: 'assets',
   defaultOptions: { scrollBeyondLastLine: false },
@@ -78,7 +80,9 @@ const monacoConfig: NgxMonacoEditorConfig = {
   declarations: [
     AppComponent,
     HomeComponent,
-    ThemeDialogComponent
+    ThemeDialogComponent,
+    EncodeComponent,
+    DecodeComponent
   ],
   imports: [
     BrowserModule,

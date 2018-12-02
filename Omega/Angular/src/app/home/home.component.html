@@ -1,10 +1,4 @@
-<div style="display: flex">
-  <div class="inputContainer">
-    <ngx-monaco-editor class="editor" name="input" [options]="editorOptions" [(ngModel)]="inputData"></ngx-monaco-editor>
-  </div>
-  <div class="inputContainer">
-    <ngx-monaco-editor class="editor" name="output" [options]="editorOptions" [(ngModel)]="ouputData"></ngx-monaco-editor>
-  </div>
+<div>
+  <button class="actionButton" mat-raised-button routerLink="/encode" color="primary">Encode</button>
+  <button class="actionButton" mat-raised-button routerLink="/decode" color="primary">Decode</button>
 </div>
-<button (click)="encodeString()">Encode</button>
-<button (click)="decodeString()">Decode</button>

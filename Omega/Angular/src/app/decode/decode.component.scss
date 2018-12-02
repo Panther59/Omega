@@ -1,0 +1,10 @@
+.inputContainer {
+  width: 95%;
+  height: calc(50% -50px);
+
+  .editor {
+    .editorContainer {
+      height: calc(100vh - 100px);
+    }
+  }
+}

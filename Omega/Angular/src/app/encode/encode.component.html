@@ -1,0 +1,9 @@
+<div>
+  <div class="inputContainer">
+    <ngx-monaco-editor class="editor" name="input" [options]="editorOptions" [(ngModel)]="inputData"></ngx-monaco-editor>
+  </div>
+  <button ma-raised-button color="primary" (click)="encodeString()">Encode</button>
+  <div class="inputContainer">
+    <ngx-monaco-editor class="editor" name="output" [options]="editorOptions" [(ngModel)]="outputData"></ngx-monaco-editor>
+  </div>
+</div>
