@@ -1,0 +1,28 @@
+@mixin app($theme) {
+
+  $foreground: map-get($theme, foreground);
+
+  .inputContainer {
+    width: 50%;
+
+    .editor {
+      .editorContainer {
+        height: calc(100vh - 100px);
+      }
+    }
+
+    input {
+      width: calc(100% - 3px);
+      margin: 3px;
+    }
+  }
+
+  .navbar-brand {
+    height: 30px;
+    background-size: 30px;
+
+    path {
+      fill: mat-color($foreground, text);
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.inputContainer {
+  width: 50%;
+
+  .editor {
+    .editorContainer {
+      height: calc(100vh - 100px);
+    }
+  }
+
+  input {
+    width: calc(100% - 3px);
+    margin: 3px;
+  }
+}

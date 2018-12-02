@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
-import { Base64Service } from 'src/_services/base64.service';
+import { Component, HostBinding } from '@angular/core';
+import { OverlayContainer } from '@angular/cdk/overlay';
+import { ActivatedRoute, Router } from '@angular/router';
+import { StorageService } from './_services/storage.service';
+import { MatDialog } from '@angular/material';
+import { ThemeDialogComponent } from './theme-dialog/theme-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -7,26 +11,47 @@ import { Base64Service } from 'src/_services/base64.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  @HostBinding('class') componentCssClass;
+  themes: string[] = ['my-light-theme', 'my-dark-theme', 'my-theme'];
+  lastUrl: any;
 
-  constructor(private service: Base64Service) { }
-  inputData: string;
-  ouputData: string;
+  constructor(
+    public overlayContainer: OverlayContainer,
+    private route: ActivatedRoute,
+    private router: Router,
+    private storageService: StorageService,
+    public dialog: MatDialog) {
 
-  encodeString() {
-    console.log(this.inputData);
-    this.service.encode(this.inputData).subscribe(data => {
-      this.ouputData = data;
-    }, error => {
-      console.error(error);
-    });
+  }
+  selectTheme(theme: string = null) {
+    let selectedTheme = 'dark-deep-purple-theme';
+    if (theme != null) {
+      selectedTheme = theme;
+    }
+
+    this.applyTheme(selectedTheme);
+    this.storageService.theme = selectedTheme;
   }
 
-  decodeString() {
-    console.log(this.inputData);
-    this.service.decode(this.inputData).subscribe(data => {
-      this.ouputData = data;
-    }, error => {
-      console.error(error);
-    });
+  applyTheme(theme: string) {
+    this.componentCssClass = theme;
+    const classList = this.overlayContainer.getContainerElement().classList;
+    const toRemove = Array.from(classList).filter((item: string) =>
+      item.includes('-theme')
+    );
+    if (toRemove && toRemove.length > 0) {
+      classList.remove(...toRemove);
+    }
+
+    classList.add(theme);
+  }
+
+  async viewTheme() {
+    const dialogRef = this.dialog.open(ThemeDialogComponent);
+
+    const result = await dialogRef.afterClosed().toPromise();
+    if (result) {
+      this.applyTheme(result);
+    }
   }
 }
