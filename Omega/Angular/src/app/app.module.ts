@@ -6,7 +6,6 @@ import { MonacoEditorModule, NgxMonacoEditorConfig } from 'ngx-monaco-editor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { Base64Service } from './_services/base64.service';
 import { BlockUIModule } from 'ng-block-ui';
 import {
   MatButtonModule,
@@ -35,6 +34,7 @@ import { MessageService } from './_services/message.service';
 import { ThemeDialogComponent } from './theme-dialog/theme-dialog.component';
 import { EncodeComponent } from './encode/encode.component';
 import { DecodeComponent } from './decode/decode.component';
+import { EncodeDecodeService } from './_services/encodeDecode.service';
 const monacoConfig: NgxMonacoEditorConfig = {
   baseUrl: 'assets',
   defaultOptions: { scrollBeyondLastLine: false },
@@ -112,7 +112,7 @@ const monacoConfig: NgxMonacoEditorConfig = {
     BlockUIModule.forRoot()
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [Base64Service, StorageService, MessageService],
+  providers: [EncodeDecodeService, StorageService, MessageService],
   bootstrap: [AppComponent],
   entryComponents: [ThemeDialogComponent]
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Base64Service } from '../_services/base64.service';
 import { MessageService } from '../_services/message.service';
 import { StringContainer } from '../_models/stringContainer';
+import { EncodeDecodeService } from '../_services/encodeDecode.service';
 
 @Component({
   selector: 'app-decode',
@@ -10,7 +10,7 @@ import { StringContainer } from '../_models/stringContainer';
 })
 export class DecodeComponent implements OnInit {
 
-  constructor(private service: Base64Service, private messageService: MessageService) { }
+  constructor(private service: EncodeDecodeService, private messageService: MessageService) { }
   inputData: string;
   outputData: string;
   editorOptions = { theme: 'vs-dark', language: 'text' };
