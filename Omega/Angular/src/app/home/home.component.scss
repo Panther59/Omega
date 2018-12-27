@@ -19,32 +19,76 @@
   width: 30px;
 }
 
-@-webkit-keyframes changeHeight {
+@-webkit-keyframes changeHeightD {
   from {
     height: 30%;
     top: 70%;
   }
   to {
-    top: 10%;
-    height: 90%;
+    top: 20%;
+    height: 80%;
   }
 }
 
-@keyframes changeHeight {
+@keyframes changeHeightD {
   from {
     height: 30%;
     top: 70%;
   }
   to {
-    top: 10%;
-    height: 90%;
+    top: 20%;
+    height: 80%;
+  }
+}
+
+@-webkit-keyframes changeHeightF {
+  from {
+    height: 30%;
+    top: 70%;
+  }
+  to {
+    top: 20%;
+    height: 80%;
+  }
+}
+
+@keyframes changeHeightF {
+  from {
+    height: 35%;
+    top: 65%;
+  }
+  to {
+    top: 25%;
+    height: 75%;
+  }
+}
+
+@-webkit-keyframes changeHeightE {
+  from {
+    height: 30%;
+    top: 70%;
+  }
+  to {
+    top: 20%;
+    height: 80%;
+  }
+}
+
+@keyframes changeHeightE {
+  from {
+    height: 25%;
+    top: 75%;
+  }
+  to {
+    top: 15%;
+    height: 85%;
   }
 }
 
 .first {
-  animation: changeHeight infinite alternate-reverse;
+  animation: changeHeightD infinite alternate;
   animation-duration: 5s;
-  -webkit-animation: changeHeight infinite alternate-reverse;
+  -webkit-animation: changeHeightD infinite alternate;
   /* Safari 4.0 - 8.0 */
   -webkit-animation-duration: 5s;
   /* Safari 4.0 - 8.0 */
@@ -52,21 +96,21 @@
 }
 
 .second {
-  animation: changeHeight infinite alternate-reverse;
-  animation-duration: 4s;
-  -webkit-animation: changeHeight infinite alternate-reverse;
+  animation: changeHeightF infinite alternate;
+  animation-duration: 3s;
+  -webkit-animation: changeHeightF infinite alternate;
   /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 4s;
+  -webkit-animation-duration: 3s;
   /* Safari 4.0 - 8.0 */
   background-color: blue;
 }
 
 .third {
-  animation: changeHeight infinite alternate-reverse;
-  animation-duration: 4.5s;
-  -webkit-animation: changeHeight infinite alternate-reverse;
+  animation: changeHeightE infinite alternate;
+  animation-duration: 4s;
+  -webkit-animation: changeHeightE infinite alternate;
   /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 4.5s;
+  -webkit-animation-duration: 4s;
   /* Safari 4.0 - 8.0 */
   background-color: green;
 }
