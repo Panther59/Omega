@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { StringContainer } from '../_models/stringContainer';
-import { MessageService } from '../_services/message.service';
+
 import { EncodeDecodeService } from '../_services/encodeDecode.service';
+import { MessageService } from '../_services/message.service';
+import { StringContainer } from '../_models/stringContainer';
 
 @Component({
   selector: 'app-encode',

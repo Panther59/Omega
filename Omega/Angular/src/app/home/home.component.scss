@@ -1,3 +1,117 @@
-.actionButton{
+.actionButton {
   margin: 5px;
+}
+
+.barContainer {
+  display: inline-flex;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.bar {
+  height: 100px;
+  width: 30px;
+}
+
+@-webkit-keyframes changeHeight {
+  from {
+    height: 30%;
+    top: 70%;
+  }
+  to {
+    top: 10%;
+    height: 90%;
+  }
+}
+
+@keyframes changeHeight {
+  from {
+    height: 30%;
+    top: 70%;
+  }
+  to {
+    top: 10%;
+    height: 90%;
+  }
+}
+
+.first {
+  animation: changeHeight infinite alternate-reverse;
+  animation-duration: 5s;
+  -webkit-animation: changeHeight infinite alternate-reverse;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 5s;
+  /* Safari 4.0 - 8.0 */
+  background-color: red;
+}
+
+.second {
+  animation: changeHeight infinite alternate-reverse;
+  animation-duration: 4s;
+  -webkit-animation: changeHeight infinite alternate-reverse;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s;
+  /* Safari 4.0 - 8.0 */
+  background-color: blue;
+}
+
+.third {
+  animation: changeHeight infinite alternate-reverse;
+  animation-duration: 4.5s;
+  -webkit-animation: changeHeight infinite alternate-reverse;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4.5s;
+  /* Safari 4.0 - 8.0 */
+  background-color: green;
+}
+
+.mainContainer {
+  position: relative;
+}
+
+.bars {
+  fill: yellow;
+  height: 200px;
+  width: 200px;
+  float: left;
+}
+
+.barcontainer {
+  overflow: hidden;
+  float: left;
+  position: absolute;
+  left: 10px;
+}
+
+.progress-bar {
+  float: left;
+  height: 180px;
+  width: 40px;
+  margin-left: 15px;
+}
+
+.progress-track {
+  position: relative;
+  width: 40px;
+  height: 100%;
+}
+
+.progress-fill {
+  position: relative;
+  width: 40px;
+  text-align: center;
+  font-family: "Lato", "Verdana", sans-serif;
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.logoText {
+  padding-top: 10px;
+  font-size: 30px;
 }

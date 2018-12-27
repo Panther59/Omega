@@ -1,8 +1,9 @@
-import { Component, HostBinding } from '@angular/core';
-import { OverlayContainer } from '@angular/cdk/overlay';
 import { ActivatedRoute, Router } from '@angular/router';
-import { StorageService } from './_services/storage.service';
+import { Component, HostBinding } from '@angular/core';
+
 import { MatDialog } from '@angular/material';
+import { OverlayContainer } from '@angular/cdk/overlay';
+import { StorageService } from './_services/storage.service';
 import { ThemeDialogComponent } from './theme-dialog/theme-dialog.component';
 
 @Component({
@@ -20,9 +21,8 @@ export class AppComponent {
     private route: ActivatedRoute,
     private router: Router,
     private storageService: StorageService,
-    public dialog: MatDialog) {
-
-  }
+    public dialog: MatDialog
+  ) {}
   selectTheme(theme: string = null) {
     let selectedTheme = 'dark-deep-purple-theme';
     if (theme != null) {

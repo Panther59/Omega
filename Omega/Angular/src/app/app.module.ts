@@ -1,40 +1,58 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';  // replaces previous Http service
-import { FormsModule } from '@angular/forms';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatToolbarModule,
+  MatTooltipModule
+} from '@angular/material';
 import { MonacoEditorModule, NgxMonacoEditorConfig } from 'ngx-monaco-editor';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { BlockUIModule } from 'ng-block-ui';
-import {
-  MatButtonModule,
-  MatCheckboxModule,
-  MatMenuModule,
-  MatSidenavModule,
-  MatToolbarModule,
-  MatCardModule,
-  MatIconModule,
-  MatDividerModule,
-  MatListModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatExpansionModule,
-  MatDialogModule,
-  MatSelectModule,
-  MatDatepickerModule,
-  MatNativeDateModule,
-  MatTooltipModule
-} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
+import { DecodeComponent } from './decode/decode.component';
+import { EncodeComponent } from './encode/encode.component';
+import { EncodeDecodeService } from './_services/encodeDecode.service';
+import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
-import { routing } from './app.routing';
+import { HttpClientModule } from '@angular/common/http';
+import { MessageService } from './_services/message.service';
 import { RouterModule } from '@angular/router';
 import { StorageService } from './_services/storage.service';
-import { MessageService } from './_services/message.service';
 import { ThemeDialogComponent } from './theme-dialog/theme-dialog.component';
-import { EncodeComponent } from './encode/encode.component';
-import { DecodeComponent } from './decode/decode.component';
-import { EncodeDecodeService } from './_services/encodeDecode.service';
+import { routing } from './app.routing';
+
+// replaces previous Http service
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const monacoConfig: NgxMonacoEditorConfig = {
   baseUrl: 'assets',
   defaultOptions: { scrollBeyondLastLine: false },

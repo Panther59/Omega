@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Base64Service } from '../_services/base64.service';
+
+import { EncodeDecodeService } from '../_services/encodeDecode.service';
 import { StringContainer } from '../_models/stringContainer';
 
 @Component({
@@ -9,7 +10,7 @@ import { StringContainer } from '../_models/stringContainer';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private service: Base64Service) { }
+  constructor(private service: EncodeDecodeService) { }
   inputData: string;
   ouputData: string;
   editorOptions = { theme: 'vs-dark', language: 'text' };
@@ -17,9 +18,9 @@ export class HomeComponent implements OnInit {
     console.log(this.inputData);
     const input = new StringContainer();
     input.text = this.inputData;
-    this.service.encode(input).subscribe(data => {
+    this.service.encode(input).subscribe((data: { text: string; }) => {
       this.ouputData = data.text;
-    }, error => {
+    }, (error: any) => {
       console.error(error);
     });
   }
@@ -28,9 +29,9 @@ export class HomeComponent implements OnInit {
     console.log(this.inputData);
     const input = new StringContainer();
     input.text = this.inputData;
-    this.service.decode(input).subscribe(data => {
+    this.service.decode(input).subscribe((data: { text: string; }) => {
       this.ouputData = data.text;
-    }, error => {
+    }, (error: any) => {
       console.error(error);
     });
   }
